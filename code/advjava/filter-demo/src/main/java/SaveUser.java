@@ -23,11 +23,13 @@ public class SaveUser extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String contact = request.getParameter("contact");
 		String dob = request.getParameter("dob");
+		String age = request.getParameter("age");
 		
 		out.print("<h1>Name : "+name+"</h1>");
 		out.print("<h1>Contact : "+contact+"</h1>");
 		out.print("<h1>Gender : "+gender+"</h1>");
 		out.print("<h1>Dob : "+dob+"</h1>");
+		out.print("<h1>Age : "+age+"</h1>");
 		
 	}
 

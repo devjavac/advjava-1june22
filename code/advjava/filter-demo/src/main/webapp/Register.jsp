@@ -30,6 +30,8 @@
 		<br/><br/>
 		Enter DOB <input type="date" name="dob" value="${param.dob}">
 		<br/><br/>
+		Enter Age <input type="text" name="age" value="${param.age}">
+		<br/><br/>
 		<button type="submit">Register</button>
 	</form>
 </div>
