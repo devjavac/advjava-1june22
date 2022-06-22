@@ -76,7 +76,8 @@ public class DataValidation implements Filter {
 		
 		if(errorMsgs.isEmpty()) {
 			chain.doFilter(request, response); // to forward request to the original page
-		} else {			req.setAttribute("errors", errorMsgs);
+		} else {			
+			req.setAttribute("errors", errorMsgs);
 			RequestDispatcher dis = req.getRequestDispatcher("Register.jsp");
 			dis.forward(req, res);
 		}

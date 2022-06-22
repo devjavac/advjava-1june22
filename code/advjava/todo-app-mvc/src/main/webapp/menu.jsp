@@ -12,8 +12,8 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="home.jsp">Home</a></li>
       <li><a href="create-task.jsp">New Task</a></li>
-      <li><a href="#">View Task</a></li>
-      <li><a href="#">Search</a></li>
+      <li><a href="get-all-task">View Task</a></li>
+      <li><a href="search-task.jsp">Search</a></li>
     </ul>
   </div>
 </nav> 
