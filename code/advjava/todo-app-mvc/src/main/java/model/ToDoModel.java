@@ -63,6 +63,70 @@ public class ToDoModel {
 		return taskList;
 	}
 	
+	public TaskBean getTaskById(int id) {
+		TaskBean bean = new TaskBean();
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/advjava1june","root","root");
+			PreparedStatement stmt = con.prepareStatement("select * from task where id=?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()) {
+				bean.setId(rs.getInt("id"));
+				bean.setTitle(rs.getString("title"));
+				bean.setStatus(rs.getString("status"));
+				bean.setScheduledOn(rs.getString("scheduledOn"));
+				bean.setUpdatedOn(rs.getString("updatedOn"));
+			}
+			rs.close();
+			con.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return bean;
+	}
+	
+	
+	
+	
+	public boolean updateTask(TaskBean bean) {
+		boolean result = false;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/advjava1june","root","root");
+			PreparedStatement stmt = con.prepareStatement("update task set title=? ,status=?,scheduledOn=?,updatedOn=? where id=?");
+			stmt.setString(1, bean.getTitle());
+			stmt.setString(2, bean.getStatus());
+			stmt.setString(3, bean.getScheduledOn());
+			stmt.setString(4, bean.getUpdatedOn());
+			stmt.setInt(5, bean.getId());
+			int count = stmt.executeUpdate();
+			if(count>0) {
+				result = true;
+			}
+			con.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

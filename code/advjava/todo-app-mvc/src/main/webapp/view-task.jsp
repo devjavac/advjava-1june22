@@ -40,7 +40,7 @@
 				<td><%= obj.getStatus() %></td>
 				<td><%= obj.getScheduledOn()  %></td>
 				<td><%= obj.getUpdatedOn() %></td>
-				<td> <a class="btn btn-success" href="#">Edit</a> </td>
+				<td> <a class="btn btn-success" href="update-task?id=<%=obj.getId()%>">Edit</a> </td>
 				<td> <a class="btn btn-danger" href="#">Delete</a></td>
 			</tr>
 		<%		
