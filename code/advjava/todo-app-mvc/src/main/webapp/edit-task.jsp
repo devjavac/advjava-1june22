@@ -35,6 +35,8 @@
 	<h3 style="color: <%=color%>"><%=msg%></h3>
 	<form action="edit-task">
 		<input type="hidden" name="id" value="<%= bean.getId() %>">
+		Task Id <input type="text" name="id" value="<%= bean.getId() %>" disabled="disabled">
+		<br><br>
 		Task Title <input type="text" name="title" value="<%= bean.getTitle() %>">
 		<br><br>
 		Task Status <select name="status">
