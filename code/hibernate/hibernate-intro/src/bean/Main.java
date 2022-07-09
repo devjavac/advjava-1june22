@@ -13,7 +13,7 @@ public class Main {
 		st.setName("Abc");
 		st.setContact("9879789789");
 		st.setEmail("abc@gmail.com");
-		
+		// Load a Hibernate Config
 		Configuration cfg = new Configuration();
 		cfg.configure("hibernate.cfg.xml");
 		
@@ -21,6 +21,9 @@ public class Main {
 		Session session = sf.openSession();
 		Transaction tr = session.beginTransaction();
 			session.save(st); // to insert data into Table
+			//session.update(Obj);
+			//session.delete(obj);
+			//session.get(null, args);
 		tr.commit();
 		session.close();
 		
